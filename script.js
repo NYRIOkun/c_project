@@ -1,0 +1,18 @@
+$(function(){
+	$(".headerContent").hover(
+		function(){
+			$(".headerContent").find('a').slideDown();
+		},
+		function(){
+			$(".headerContent").find('a').slideUp();
+		}
+	);
+	$(".main_container").hover(
+		function(){
+			$(this).find('p').slideDown();
+		},
+		function(){
+			$(this).find('p').slideUp("fast");
+		}
+	);
+});
