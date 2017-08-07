@@ -10,34 +10,107 @@
 	
 	<!-- googlefont -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-	<!-- for reset.css 
+	<!-- reset.css 
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 	<header>
+		<!-- header box-->
+		<div class="container">
+			<div class="row header_container">
+				<div class="top_logo col-xs-6"><img src="#">ここにロゴが入るよ</img></div>
+				<div class="col-xs-6">
+					<ul class="topmenu">
+						<li class="col-xs-3"><a href="">top</a></li>
+						<li class="col-xs-3"><a href="">work</a></li>
+						<li class="col-xs-3"><a href="">achive</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</header>
 	<div id="main">
 		<div class="main_wrapper">
+			<h1 class="welcome">ようこそ</h1>
 			<div class="container">
-				<h1>ようこそ</h1>	
-				<nav>
-					<ul id="menu">
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</nav>
+				<div class="row sub_menu">
+					<div class="top_btn col-xs-6 col-md-3">
+						<button type="button" class="btn btn-primary btn-lg">good</button>
+					</div>
+					<div class="top_btn col-xs-6 col-md-3">
+						<button type="button" class="btn btn-danger btn-lg">bad</button>
+					</div>
+					<div class="top_btn col-xs-6 col-md-3">
+						<button type="button" class="btn btn-warning">I can't</button>
+					</div>
+					<div class="top_btn col-xs-6 col-md-3">
+						<button type="button" class="btn btn-info">no coment</button>
+					</div>
+				</div>
 			</div>
+			<div class="container">
+				<div class="table-responsive">
+				<table class="
+							table table-striped 
+							table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>name</th>
+							<th>rank</th>
+							<th>getting</th>
+							<th>comment</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>goodman</td>
+							<td>?</td>
+							<td>170</td>
+							<td>comment</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>badman</td>
+							<td>?</td>
+							<td>192</td>
+							<td>comment</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>man with a misson</td>
+							<td>?</td>
+							<td>140</td>
+							<td>comment</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>mili</td>
+							<td>?</td>
+							<td>150</td>
+							<td>comment</td>
+						</tr>
+					</tbody>
+				</div></table>
+			</div>
+			<nav>
+				<ul class="nav nav-tabs">
+					<li class="active tag"><a href="#">tag1</a></li>
+					<li class="tag"><a href="#">tag2</a></li>
+					<li class="tag"><a href="#">tag3</a></li>
+					<li class="tag"><a href="#">tag4</a></li>
+					<li class="tag"><a href="#">tag5</a></li>
+				</ul>
+			</nav>
 		</div>
     </div>
     <footer>
     </footer>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
