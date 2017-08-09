@@ -34,7 +34,7 @@ int main(int argc,char *argv[])
         perror(buf);
         return 1;
     }
-    while((nread=read(fd,data,sizeof(data)-1) != -1){
+    while((nread=read(fd,data,sizeof(data)-1)) != 0){
         if(nread == -1){
             sprintf(buf,"%s:read(): %s",argv[0],argv[1]);
             perror(buf);
