@@ -33,6 +33,7 @@ int main(int argc,char *argv[])
 
         while(1){
            now = time(NULL);
+           //\x1b[0;0H%s\n = 画面クリアの制御文字
            sprintf(buf,"\x1b[0;0H%s\n",ctime(&now));
            if(write(fd_timer,buf,strlen(buf)) == -1){
                return 1;
