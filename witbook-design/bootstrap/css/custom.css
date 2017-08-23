@@ -45,3 +45,14 @@ header{
 .white_space{
     height:50px;
 }
+.bar-graph{
+    letter-spacing: 5px;
+    margin-bottom:5px;
+    /*bootstrapと競合するので個別指定*/
+}
+.study{
+    width:60%;
+}
+.com{
+    width:30%;
+}
