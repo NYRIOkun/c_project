@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
     time_t now;
     sig.sa_handler=tmh;
     sigaction(SIGALRM,&sig,NULL);
-    val.it_interval.tv_sec=val.it_value.tv_sec=2;
-    val.it_interval.tv_usec=val.it_value.tv_usec=0;
+    val.it_interval.tv_sec=val.it_value.tv_sec=0;
+    val.it_interval.tv_usec=val.it_value.tv_usec=100000;
     setitimer(ITIMER_REAL,&val,NULL);
 
 

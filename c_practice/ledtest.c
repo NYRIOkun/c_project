@@ -51,7 +51,7 @@ int main(int argc,char *argv[])
         return 1;
     }
     if(strcmp(argv[2],"on")==0){
-        if(write(fd,"1",1)==-1){  //LED_OFF
+        if(write(fd,"1",1)==-1){  //LED_ON
             sprintf(buf,"%s:write():%s",argv[0],devfile);
             perror(buf);
             return 1;
