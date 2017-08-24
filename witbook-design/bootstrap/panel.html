@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- by HTML5 -->
-<html>
+<html lang="ja">
 <head>
 	<meta charset="utf-8">
 	<!-- for resposive-design meta-tag-->
@@ -19,15 +19,18 @@
 	-->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/panel.css">
+	<link rel="stylesheet" type="text/css" href="css/panel_responsive.css">
 </head>
 <body>
+	<!-- 左の余白を消すためのwrap -->
+	<div class="overflow_hide_wrap">
     <header>
     	<div class="container">
 	    	<div class="row">
-		    	<div class="col-xs-4 header_logo">
+		    	<div class="col-xs-offset-1 col-xs-4 header_logo">
 		    		<img src="#">(sample.logo)</img>
 		    	</div>
-		        <nav class="col-xs-offset-2 col-xs-6 header_menu">
+		        <nav class="col-xs-offset-2 col-xs-4 header_menu">
 		        	<ul class="row">
 		        		<li class="col-xs-4">sample1</li>
 		        		<li class="col-xs-4">sample2</li>
@@ -41,8 +44,10 @@
     	<div class="container">
 			<div class="main_top">
 				<i class="fa fa-fighter-jet fa-3x" aria-hidden="true">THIS IS SAMPLE SITE</i>
+				
 			</div>
 			<div class="main_text">
+				<p>
 				This is test-text.This is test-text.This is test-text.This is test-text.
 				This is test-text.This is test-text.This is test-text.This is test-text.
 				This is test-text.This is test-text.This is test-text.This is test-text.
@@ -50,13 +55,14 @@
 				This is test-text.This is test-text.This is test-text.This is test-text.
 				This is test-text.This is test-text.This is test-text.This is test-text.
 				This is test-text.This is test-text.This is test-text.This is test-text.
+				</p>
 			</div>
 			<div class="container">
 				<div class="row main_showcase ">
-					<div class="main_showcase_img col-sm-6">
+					<div class="main_showcase_img col-xs-6">
 						<img src="" alt="#">sample_image
 					</div>
-					<div class="main_showcase_text col-sm-6">
+					<div class="main_showcase_text col-xs-6">
 						#sample-box
 					</div>
 				</div>
@@ -68,31 +74,93 @@
 			</div>
 			<div class="main_back-focus_box container">
 				<div class="row">
-					<div class="box_make col-xs-5"><i class="fa-2x fa fa-play-circle-o" aria-hidden="true"> Life Works</i></div>
-					<div class="box_teach col-xs-offset-6 col-xs-5"><i class="fa-2x fa fa-star-o" aria-hidden="true"> Experience</i></div>
-					<div class="box_chain col-xs-offset-1 col-xs-5"><i class="fa-2x fa fa-handshake-o" aria-hidden="true"> Friends</i></div>
-					<div class="box_keep col-xs-offset-8 col-xs-4"><i class="fa-2x fa fa-grav" aria-hidden="true"> Challenger</i></div>
+					<div class="box_make col-xs-offset-3 col-xs-4"><i class="fa-2x fa fa-play-circle-o" aria-hidden="true"> Life Works</i></div>
+					<div class="box_teach col-xs-offset-6 col-xs-4"><i class="fa-2x fa fa-star-o" aria-hidden="true"> Experience</i></div>
+					<div class="box_chain col-xs-offset-2 col-xs-4"><i class="fa-2x fa fa-handshake-o" aria-hidden="true"> Friends</i></div>
+					<div class="box_keep col-xs-offset-5 col-xs-4"><i class="fa-2x fa fa-grav" aria-hidden="true"> Challenger</i></div>
 				</div>
 			</div>
-			<div class="main_back-focus_under"></div>
+			<div class="main_back-focus_under">
+				<i class="fa-3x fa fa-hand-o-down" aria-hidden="true"></i>
+			</div>
 		</div>
-		<div class="main_slide container">
-			<div class="row">
-				<div class="col-xs-4">
-					<div></div>
-				</div>
-				<div class="col-xs-4">
-					<div></div>
-				</div>
-				<div class="col-xs-4">
-					<div></div>
+		<div class="main_focus_items row">
+			<div class="item main_foucs1 col-xs-12">
+				<div class="object col-xs-6"></div>
+				<div class="space col-xs-6">
+					<img src="" alt="#">
+					<p>LIFE WORKS</p>
 				</div>
 			</div>
+			<div class="item main_foucs2 col-xs-12">
+				<div class="space col-xs-6">
+					<img src="" alt="#">
+					<p>EXP</p>
+				</div>
+				<div class="object col-xs-6"></div>
+			</div>
+			<div class="item main_foucs3 col-xs-12">
+				<div class="object col-xs-6"></div>
+				<div class="space col-xs-6">
+					<img src="" alt="#">
+					<p>FED</p>
+				</div>
+			</div>
+			<div class="item main_foucs4 col-xs-12">
+				<div class="space col-xs-6">
+					<img src="" alt="#">
+					<p>CLG</p>
+				</div>
+				<div class="object col-xs-6"></div>
+			</div>
+		</div>
+		<div class="main_focus_items_under"></div>
+		<div class="main_form container">
+		    <form>
+		        <div class="form-group">
+		            <label><i class="fa fa-user" aria-hidden="true"></i> Your name</label>
+		            <input type="text" name="name" class="form-control">
+		            
+		        </div>
+		        <div class="form-group">
+		            <label><i class="fa fa-envelope" aria-hidden="true"></i> e-mail</label>
+		            <input type="text" name="email" class="form-control">
+		        </div>
+		        <div class="form-group">
+		            <label><i class="fa fa-commenting-o" aria-hidden="true"></i> comment</label>
+		            <textarea type="text" name="comment" rows="4" class="form-control">			            </textarea>
+		        </div>
+		        <div class="checkbox">
+		            <label>
+		                <input type="checkbox">accept
+		            </label>
+		        </div>
+		        <button type="submit">
+		        	<i class="fa fa-paper-plane" aria-hidden="true"></i> Send
+		        	</button>
+		    </form>
 		</div>
     </div>
     <footer>
-        
+    	<div class="footer_container">
+    		<div class="row">
+				<icon class="col-xs-offset-3 col-xs-1">
+					<i class="fa-2x fa fa-twitter-square" aria-hidden="true"></i>
+				</icon>
+		    	<icon class="col-xs-1">
+		    		<i class="fa-2x fa fa-facebook-square" aria-hidden="true"></i>
+		    	</icon>
+				<icon class="col-xs-1">
+					<i class="fa-2x fa fa-youtube-square" aria-hidden="true"></i>
+				</icon>
+        		<div class="footer_right col-xs-offset-1 col-xs-3">
+        			<p>©2017 Site by takuchan</p>
+    			</div>
+    		</div>
+    	</div>
+
     </footer>
+    </div>
     <script type="text/javascript" src="js/panel.js"></script>
 </body>
 </html>
