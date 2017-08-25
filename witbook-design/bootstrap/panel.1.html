@@ -6,14 +6,13 @@
 	<!-- for resposive-design meta-tag-->
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>panel-test</title>
-	<link href="images/favicon.ico" rel="shortcut icon">
 
-	<!-- jquery CDN
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	-->
 	<!-- anytools-->
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+	<link href="images/favicon.ico" rel="shortcut icon">
+	<!-- googlefont -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	
 	<!-- css
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -31,7 +30,7 @@
 		    	<div class="col-xs-offset-1 col-xs-4 header_logo">
 		    		<img src="#">(sample.logo)</img>
 		    	</div>
-		        <nav class="col-sm-offset-2 col-sm-4 hidden-xs header_menu">
+		        <nav class="col-xs-offset-2 col-xs-4 header_menu">
 		        	<ul class="row">
 		        		<li class="col-xs-4">sample1</li>
 		        		<li class="col-xs-4">sample2</li>
@@ -77,14 +76,14 @@
 		</div>
 		<div class="main_back-focus">
 			<div class="main_back-focus_text">
-				<i class="fa fa-hand-o-right focus_text" aria-hidden="true">Focus</i>
+				<i class="fa fa-hand-o-right" aria-hidden="true">Focus</i>
 			</div>
 			<div class="main_back-focus_box container">
 				<div class="row">
-					<div class="box col-sm-offset-3 col-sm-4 col-xs-offset-2 col-xs-5"><i class="fa-2x fa fa-play-circle-o" aria-hidden="true"> LifeWork</i></div>
-					<div class="box col-sm-offset-6 col-sm-4 col-xs-offset-2 col-xs-5"><i class="fa-2x fa fa-star-o" aria-hidden="true"> Experience</i></div>
-					<div class="box col-sm-offset-2 col-sm-4 col-xs-offset-2 col-xs-5"><i class="fa-2x fa fa-handshake-o" aria-hidden="true"> Friends</i></div>
-					<div class="box col-sm-offset-5 col-sm-4 col-xs-offset-2 col-xs-5"><i class="fa-2x fa fa-grav" aria-hidden="true"> Challenger</i></div>
+					<div class="box col-xs-offset-3 col-xs-4"><i class="fa-2x fa fa-play-circle-o" aria-hidden="true"> Life Works</i></div>
+					<div class="box col-xs-offset-6 col-xs-4"><i class="fa-2x fa fa-star-o" aria-hidden="true"> Experience</i></div>
+					<div class="box col-xs-offset-2 col-xs-4"><i class="fa-2x fa fa-handshake-o" aria-hidden="true"> Friends</i></div>
+					<div class="box col-xs-offset-5 col-xs-4"><i class="fa-2x fa fa-grav" aria-hidden="true"> Challenger</i></div>
 				</div>
 			</div>
 			<div class="main_back-focus_under">
@@ -92,51 +91,37 @@
 			</div>
 		</div>
 		<div class="main_focus_items row">
-			<div class="item main_foucsL col-sm-12">
-				<div class="object col-sm-6 col-xs-12">
+			<div class="item main_foucs1 col-xs-12">
+				<div class="object col-xs-6">
 					<h2>Life Works <i class=" fa fa-hand-o-right" aria-hidden="true"></i></h2> 
 				</div>
-				<div class="space_R col-sm-6 col-xs-12">
-					<div class="space_box">
-						<h2>Focus</h2>
-						<p>any content</p>
-					</div>
+				<div class="space col-xs-6">
+					
 				</div>
 			</div>
-			<div class="item main_foucsR col-sm-12 col-xs-12">
-				<div class="object col-sm-6 col-sm-push-6 col-xs-12">
+			<div class="item main_foucs2 col-xs-12">
+				<div class="space col-xs-6">
+					
+				</div>
+				<div class="object col-xs-6">
 					<h2><i class="fa fa-hand-o-left" aria-hidden="true"> Experience</i></h2>
 				</div>
-				<div class="space_L col-sm-6 col-sm-pull-6 col-xs-12">
-					<div class="space_box">
-						<h2>Focus</h2>
-						<p>any content</p>
-					</div>
-				</div>
-				
 			</div>
-			<div class="item main_foucsL col-sm-12 col-xs-12">
-				<div class="object col-sm-6 col-xs-12">
+			<div class="item main_foucs3 col-xs-12">
+				<div class="object col-xs-6">
 					<h2>Friends <i class=" fa fa-hand-o-right" aria-hidden="true"></i></h2> 
 				</div>
-				<div class="space_R col-sm-6 col-xs-12">
-					<div class="space_box">
-						<h2>Focus</h2>
-						<p>any content</p>
-					</div>
+				<div class="space col-xs-6">
+					
 				</div>
 			</div>
-			<div class="item main_foucsR col-sm-12 col-xs-12">
-				<div class="object col-sm-6 col-sm-push-6 col-xs-12">
+			<div class="item main_foucs4 col-xs-12">
+				<div class="space col-xs-6">
+					
+				</div>
+				<div class="object col-xs-6">
 					<h2><i class=" fa fa-hand-o-left" aria-hidden="true"> Challenge</i></h2>
 				</div>
-				<div class="space_L col-sm-6 col-sm-pull-6 col-xs-12">
-					<div class="space_box">
-						<h2>Focus</h2>
-						<p>any content</p>
-					</div>
-				</div>
-				
 			</div>
 		</div>
 		<div class="main_focus_items_under"></div>
@@ -179,14 +164,13 @@
 					<i class="fa-2x fa fa-youtube-square" aria-hidden="true"></i>
 				</icon>
         		<div class="footer_right col-sm-offset-1 col-sm-3 col-xs-offset-2 col-xs-5">
-        			<p>The Sample Site by takuchan</p>
+        			<p>©2017 Site by takuchan</p>
     			</div>
     		</div>
     	</div>
 
     </footer>
     </div>
-    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="js/panel.js"></script>
 </body>
 </html>
