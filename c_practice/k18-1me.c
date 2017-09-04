@@ -2,45 +2,68 @@
 #include <string.h>			//for strlen()
 #include <fcntl.h>			//for open()
 #include <stdlib.h>			//for rand()
-
+#include <tslib.h>
+#include <linux/input.h>
 #include <sys/mman.h>		//for mmap(),munmap()
 
 //prottype
-int error_func(char *buf,char *text);
-
-//origin define
-#define error
+void pset(unsigned short *pfb,int x,int y,unsigned short color);
 
 //need define
 #define SCREENWIDTH		480
 #define SCREENHEIGHT	272
 #define SCREENSIZE		(SCREENWIDTH * SCREENHEIGHT * 2)
-
+#define DEVNAME 		"/dev/input/event1"
 
 //color-array formatting [RED(5bit)|GREEN(6bit)|BLUE(5bit)]
 #define RGB(r,g,b) (((r) << 11) | ((g) << 5) | (b))
 
-#define DEVNAME0 "/dev/input/event0"
-#define DEVNAME1 "/dev/input/event1"
-#define R_LED "/sys/class/leds/red/brightness"
-#define G_LED "/sys/class/leds/green/brightness"
-#define Y_LED "/sys/class/leds/yellow/brightness"
-
-
-//get line of argc
-int main(int argc,char *argv[])
+int main(void)
 {
 	int fd;
 	int x,y;
 	unsigned short r,g,b;
 	unsigned short *pfb;
 	unsigned short *ppic;
+	int ret;
+    struct tsdev *ts;
+    struct ts_sample samp;
 	
-	fd= open("/dev/fb0",O_RDWR);
+	ts  = ts_open(DEVNAME,0);		//タッチパネルを開く
+    ret = ts_config(ts);			//設定を読み込む
+    
+	fd  = open("/dev/fb0",O_RDWR);	//画面描写のファイルを開く
+	
+	/** mmapでバッファ先頭アドレスを取得 **/
+	pfb = mmap(0,SCREENSIZE,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+	
+	//pfbを基準にしてメモリアクセス
+	memset(pfb,0,SCREENSIZE); //これは白で塗りつぶしてますね 255=白
+	
+	//show sand-storm
+	for(;;){
+		ret = ts_read(ts,&samp,1);
+		printf("x:%6d y:%6d p:%6d\n", samp.x, samp.y, samp.pressure);
+        if(samp.pressure > 0){
+             pset(pfb, samp.x, samp.y, RGB(31,63,31) );
+        }
+	}
+	
+	ts_close(ts);
+	munmap(pfb,SCREENSIZE);
+	close(fd);
+	return 0;
+}
 
-	
-/*********************************
- * ===============================
+/** ペンでお絵かきできる関数 **/
+void pset(unsigned short *pfb,int x,int y,unsigned short color)
+{
+    if(y*SCREENWIDTH+x < SCREENWIDTH * SCREENHEIGHT)
+        *(pfb+y*SCREENWIDTH+x) = color;
+}
+
+
+/* ===============================
  * mmap(*<start>,<length>,<prot>,<flags>,<fd>,<offset>)
  * ===============================
  * usage			: fileの情報をメモリにマッピングする
@@ -50,37 +73,18 @@ int main(int argc,char *argv[])
  * <offset>			: 終端アドレス直後の、NULLメモリ数の設定
  * return			: success:1、error:0
  * other			: おまじない
- * ==============================
- ********************************/
-	//mmapでバッファ先頭アドレスを取得
-	pfb = mmap(0,SCREENSIZE,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
-
-/*********************************
+ * ===============================
+ 
  * ===============================
  * memset(*<target>,<data>,<size>)
  * ===============================
  * usage			: size分メモリアクセスでtargetする
  * <target>			: target先の先頭アドレス
- * <deta>			: 書き込むdata
+ * <data>			: 書き込むdata
  * <size>			: size
  * return			: OK:1 ER:0
- * ==============================
- ********************************/
-	//pfbを基準にしてメモリアクセス
-	memset(pfb,255,SCREENSIZE);
-	
-	//show sand-storm
-	for(x=0; x<SCREENWIDTH;x++){
-		for(y=0; y<SCREENHEIGHT;y++){
-			r=rand()%32;
-			g=rand()%64;
-			b=rand()%32;
-			ppic=pfb+x+y*SCREENWIDTH;
-			*ppic=RGB(r,g,b);
-			//pfb[x+y*SCREENWIDTH]= RGB(r,g,b);
-		}
-	}
-/*********************************
+ * ===============================
+ 
  * ===============================
  * munmap(*<target>,<size>)
  * ===============================
@@ -88,9 +92,4 @@ int main(int argc,char *argv[])
  * <target>	 		: 解除するMAPを指定
  * <size>			: 長さ指定
  * return			: OK:1 ER:0
- * ==============================
- ********************************/
-	munmap(pfb,SCREENSIZE);
-	close(fd);
-	return 0;
-}
+ * =============================== */

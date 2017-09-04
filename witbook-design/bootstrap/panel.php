@@ -1,3 +1,4 @@
+<?php?>
 <!DOCTYPE html>
 <!-- by HTML5 -->
 <html lang="ja">
